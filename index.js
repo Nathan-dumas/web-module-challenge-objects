@@ -123,14 +123,17 @@ console.log(getLastReview(reviews));
     {name: "Wen", rating: 4.5, feedback:"I don't leave my house often, but when I do, it's for this place. Highly reccomend."},
     {name:"Lauren", rating: 4, feedback: "Absolutely love that they have karaoke Fridays! Food and drink selection is okay."}]
 */
-
-const reviewByRating = [];
-
-function getReviewByRating(array, rating) {
-  
+function getReviewByRating(array, rating){
+  const ratingByNum = [];
+  for(let i = 0; i < array.length; i++){
+    if(array[i].rating === rating || array[i].rating === rating + .5){
+      ratingByNum.push(array[i]);
+    }
+  }
+  return ratingByNum;
 }
 
-
+console.log(getReviewByRating(reviews, 4));
 /** STRETCH 2: Write a function called 'getLongestReview' that returns an array containing all reviews longer than 15 words. 
   
 Your function should accept: 
@@ -144,8 +147,8 @@ and should return an array of objects.
     {name: "Brett", rating: 3, feedback: "great selection of snacks and a nice cafe area to get work done during the day."},
     {name: "Julius", rating: 2, feedback: "I was largely unimpressed by this venue. Nothing special on the menu and too expensive. The atmosphere is polarizing, and not for me, but I think some would like it." }]
 */
-function getLongReviews(/* code here */) {
-  /* code here */
+function getLongReviews(array) {
+  
 }
 
 
