@@ -73,7 +73,7 @@ function addFeedback(array, index, feedback) {
   return array;
 }
 
-console.log(addFeedback(reviews, 7, "this place is chill with really cool people, great for getting work done on weekdays"));
+console.log(addFeedback(reviews, 7, "This place is chill with really cool people, great for getting work done on weekdays"));
 
 
 /*  Task 6: Write a function to return a review based on the index of the review in the array.
@@ -149,9 +149,16 @@ and should return an array of objects.
     {name: "Julius", rating: 2, feedback: "I was largely unimpressed by this venue. Nothing special on the menu and too expensive. The atmosphere is polarizing, and not for me, but I think some would like it." }]
 */
 function getLongReviews(array) {
-
+  let longReview = [];
+  for (let i = 0; i < array.length; i++) {
+    if (array[i].feedback.split(" ").length > 14) {
+      longReview.push(array[i]);
+    }
+  }
+  return longReview;
 }
 
+console.log(getLongReviews(reviews));
 
 /* STRETCH 3:  This challenge is not related to the data above! 
 
@@ -170,3 +177,20 @@ The returned object should have the following characteristics:
          (2) returns the updated value of the `odometer`.
 */
 
+function carMaker(odometer){
+  return car = {
+    odometer,
+    drive: function(distance){
+      odometer = odometer + distance;
+      return odometer;
+    }
+  }
+};
+
+carMaker(0);
+
+console.log(car);
+
+console.log(car.drive(10));
+
+console.log(car.drive(20));
