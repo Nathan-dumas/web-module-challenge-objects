@@ -30,10 +30,10 @@ const burger = {
   name: "Burger",
   price: 18,
   category: "Lunch",
-  discount: function (type){
-    if(type === "Teacher" || type === "Student"){
+  discount: function (type) {
+    if (type === "Teacher" || type === "Student") {
       return this.price - (this.price * .25);
-    }else{
+    } else {
       return this.price - (this.price * .10);
     }
   }
@@ -52,14 +52,15 @@ const reviews = [{ name: "Daniela", rating: 5, feedback: "Beautiful atmosphere a
 { name: "Reyna", rating: 3.5, feedback: "" },
 ]
 
+
 /* Task 3: Console.log just Julius' feedback */
 
 console.log(reviews[5].feedback);
 
 /* Task 4: Add a new rating with your (fictitious) opinions of the restaurant in the same format as the reviews above. */
 
-function addReview(array, name, rating, feedback){
-  array.push({name, rating, feedback});
+function addReview(array, name, rating, feedback) {
+  array.push({ name, rating, feedback });
   return array
 };
 
@@ -67,7 +68,7 @@ console.log(addReview(reviews, 'Nathan', 4, "Great service"));
 
 /* Task 5: Add the following feedback to Reyna's rating - "this place is chill with really cool people, great for getting work done on weekdays" */
 
-function addFeedback(array, index, feedback){
+function addFeedback(array, index, feedback) {
   array[index].feedback = feedback;
   return array;
 }
@@ -123,10 +124,10 @@ console.log(getLastReview(reviews));
     {name: "Wen", rating: 4.5, feedback:"I don't leave my house often, but when I do, it's for this place. Highly reccomend."},
     {name:"Lauren", rating: 4, feedback: "Absolutely love that they have karaoke Fridays! Food and drink selection is okay."}]
 */
-function getReviewByRating(array, rating){
+function getReviewByRating(array, rating) {
   const ratingByNum = [];
-  for(let i = 0; i < array.length; i++){
-    if(array[i].rating === rating || array[i].rating === rating + .5){
+  for (let i = 0; i < array.length; i++) {
+    if (array[i].rating === rating || array[i].rating === rating + .5) {
       ratingByNum.push(array[i]);
     }
   }
@@ -148,7 +149,7 @@ and should return an array of objects.
     {name: "Julius", rating: 2, feedback: "I was largely unimpressed by this venue. Nothing special on the menu and too expensive. The atmosphere is polarizing, and not for me, but I think some would like it." }]
 */
 function getLongReviews(array) {
-  
+
 }
 
 
@@ -169,6 +170,3 @@ The returned object should have the following characteristics:
          (2) returns the updated value of the `odometer`.
 */
 
-
-function carMaker(odometer) {
-}
